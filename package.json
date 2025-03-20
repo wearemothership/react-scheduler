@@ -20,14 +20,15 @@
     "pre:commit": "lint-staged",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "postinstall": "npm run build"
   },
   "exports": {
     "./types": {
-      "import": "./types.d.ts"
+      "import": "./dist/types.d.ts"
     },
     ".": {
-      "import": "./index.js"
+      "import": "./dist/index.js"
     }
   },
   "lint-staged": {
@@ -109,7 +110,13 @@
     "date-fns": ">=4.0.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
-    "rrule": ">=2.8.1"
+    "react-router": ">=7.0.0",
+    "rrule": ">=2.8.1",
+    "vite": "^6.1.1",
+    "vite-plugin-checker": "^0.9.0",
+    "vite-plugin-dts": "^4.5.0",
+    "vite-plugin-svgr": "^4.3.0",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "peerDependenciesMeta": {
     "rrule": {
